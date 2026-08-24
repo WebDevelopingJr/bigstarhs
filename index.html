@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Star Home Service | Limpieza Residencial y Comercial en Miami</title>
+<meta name="description" content="Servicio de limpieza profesional premium en Miami, Doral, Coral Gables, Brickell y Weston. Calidad que se ve, servicio que se siente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#070f22;
+    --navy-900:#0a1830;
+    --navy-800:#122a4d;
+    --navy-700:#1c3a67;
+    --gold-600:#a9843a;
+    --gold-500:#c6a455;
+    --gold-300:#e8d6a0;
+    --gold-100:#f6ecd2;
+    --ivory-50:#faf7f1;
+    --ivory-100:#f2ede1;
+    --ink-900:#171a22;
+    --ink-600:#4a4f5c;
+    --line:rgba(198,164,85,0.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans',sans-serif;
+    color:var(--ink-900);
+    background:var(--ivory-50);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  h1,h2,h3,.display{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    line-height:1.05;
+    letter-spacing:0.005em;
+  }
+  .eyebrow{
+    font-family:'Work Sans',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.22em;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--gold-600);
+  }
+  .eyebrow.on-dark{color:var(--gold-300);}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 28px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:0.92rem;
+    letter-spacing:0.02em;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold-300),var(--gold-500) 60%,var(--gold-600));
+    color:var(--navy-950);
+  }
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(198,164,85,0.35);}
+  .btn-outline{
+    background:transparent;
+    border:1px solid rgba(250,247,241,0.4);
+    color:var(--ivory-50);
+  }
+  .btn-outline:hover{border-color:var(--gold-300);color:var(--gold-300);}
+  .btn-ink{
+    background:var(--navy-900);
+    color:var(--ivory-50);
+  }
+  .btn-ink:hover{background:var(--navy-800);transform:translateY(-2px);}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--navy-950);
+    color:var(--gold-100);
+    font-size:0.78rem;
+  }
+  .topbar .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:38px;
+    gap:20px;
+  }
+  .topbar-links{display:flex;gap:26px;}
+  .topbar-links a{display:flex;align-items:center;gap:7px;opacity:0.88;transition:opacity .2s;}
+  .topbar-links a:hover{opacity:1;color:var(--gold-300);}
+  .topbar-tag{opacity:0.7;letter-spacing:0.04em;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy-900);
+    border-bottom:1px solid rgba(198,164,85,0.18);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:84px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:42px;height:42px;flex:none;}
+  .brand-text{color:var(--ivory-50);line-height:1.1;}
+  .brand-text .b1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.32rem;font-weight:700;letter-spacing:0.03em;
+  }
+  .brand-text .b1 span{color:var(--gold-300);}
+  .brand-text .b2{
+    font-size:0.6rem;letter-spacing:0.3em;color:var(--gold-500);
+    text-transform:uppercase;margin-top:2px;
+  }
+  .nav-links{display:flex;gap:40px;}
+  .nav-links a{
+    color:var(--ivory-50);
+    font-size:0.86rem;font-weight:500;
+    opacity:0.82;
+    position:relative;
+    padding:6px 0;
+    transition:opacity .2s;
+  }
+  .nav-links a:hover{opacity:1;color:var(--gold-300);}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:24px;height:2px;background:var(--gold-300);margin:5px 0;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--navy-900);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.02fr 0.98fr;
+    min-height:640px;
+  }
+  .hero-copy{
+    position:relative;z-index:2;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:70px 56px 70px 0;
+  }
+  .hero-copy .eyebrow{margin-bottom:18px;}
+  .hero-copy h1{
+    color:var(--ivory-50);
+    font-size:clamp(2.4rem,4.2vw,3.6rem);
+    margin-bottom:22px;
+    max-width:15ch;
+  }
+  .hero-copy h1 em{
+    font-style:italic;
+    background:linear-gradient(120deg,var(--gold-300),var(--gold-500));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero-copy p{
+    color:rgba(250,247,241,0.72);
+    font-size:1.05rem;
+    max-width:44ch;
+    margin-bottom:34px;
+    line-height:1.65;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:36px;}
+  .hero-trust{display:flex;gap:28px;flex-wrap:wrap;}
+  .hero-trust li{
+    display:flex;align-items:center;gap:9px;
+    color:var(--gold-100);font-size:0.82rem;font-weight:500;
+  }
+  .hero-trust svg{width:16px;height:16px;flex:none;color:var(--gold-500);}
+
+  .hero-visual{
+    position:relative;
+    clip-path:polygon(14% 0,100% 0,100% 100%,0% 100%);
+    background:linear-gradient(160deg,var(--navy-800),var(--navy-950) 70%);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(198,164,85,0.18), transparent 45%),
+      radial-gradient(circle at 75% 75%, rgba(198,164,85,0.14), transparent 50%);
+  }
+  .hero-visual-edge{
+    position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--gold-300),var(--gold-600));
+    transform:translateX(-1px) skewX(-8.5deg);
+    transform-origin:top left;
+  }
+  .hero-illustration{position:relative;z-index:2;width:74%;max-width:340px;}
+
+  /* Quote strip */
+  .quote-strip{
+    background:var(--ivory-50);
+    border-bottom:1px solid rgba(23,26,34,0.06);
+  }
+  .quote-card{
+    display:flex;flex-wrap:wrap;
+    background:#fff;
+    margin-top:-46px;
+    position:relative;z-index:5;
+    box-shadow:0 20px 50px rgba(10,24,48,0.14);
+    border-top:3px solid var(--gold-500);
+  }
+  .quote-form{
+    flex:1 1 560px;
+    padding:30px 36px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    align-items:end;
+  }
+  .quote-form .field{display:flex;flex-direction:column;gap:6px;}
+  .quote-form label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-600);font-weight:600;}
+  .quote-form input,.quote-form select{
+    border:1px solid rgba(23,26,34,0.14);
+    padding:11px 12px;font-family:inherit;font-size:0.9rem;color:var(--ink-900);
+    background:var(--ivory-100);
+    border-radius:2px;
+  }
+  .quote-form .submit-cell{grid-column:span 1;}
+  .quote-form button{width:100%;justify-content:center;}
+  .quote-phone{
+    flex:0 0 300px;
+    background:var(--navy-900);
+    color:var(--ivory-50);
+    display:flex;align-items:center;gap:16px;
+    padding:0 32px;
+  }
+  .quote-phone svg{width:30px;height:30px;color:var(--gold-400,var(--gold-500));flex:none;}
+  .quote-phone .lbl{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-300);}
+  .quote-phone .num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:110px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-top:14px;color:var(--navy-900);}
+  .section-head p{margin-top:16px;color:var(--ink-600);line-height:1.7;font-size:1rem;}
+
+  /* About */
+  .about{background:var(--ivory-50);}
+  .about-grid{
+    display:grid;grid-template-columns:0.85fr 1.15fr;
+    gap:70px;align-items:center;
+  }
+  .about-panel{
+    position:relative;
+    aspect-ratio:4/5;
+    background:linear-gradient(150deg,var(--navy-800),var(--navy-950));
+    clip-path:polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 30px 60px rgba(10,24,48,0.18);
+  }
+  .about-panel svg{width:56%;}
+  .about-copy h2{color:var(--navy-900);font-size:clamp(1.9rem,3vw,2.5rem);margin:14px 0 20px;}
+  .about-copy p{color:var(--ink-600);line-height:1.75;margin-bottom:16px;font-size:1rem;}
+  .about-badges{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;
+  }
+  .about-badge{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:18px;background:#fff;border:1px solid rgba(23,26,34,0.07);
+    border-left:3px solid var(--gold-500);
+  }
+  .about-badge svg{width:22px;height:22px;color:var(--gold-600);flex:none;margin-top:2px;}
+  .about-badge b{display:block;font-size:0.9rem;font-weight:700;color:var(--navy-900);margin-bottom:3px;}
+  .about-badge span{font-size:0.82rem;color:var(--ink-600);line-height:1.5;}
+
+  /* Areas strip */
+  .areas-strip{
+    background:var(--navy-900);
+    padding:26px 0;
+  }
+  .areas-strip .wrap{
+    display:flex;align-items:center;justify-content:center;
+    flex-wrap:wrap;gap:14px 34px;
+  }
+  .areas-strip .lead{
+    color:var(--gold-300);font-size:0.76rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;
+    margin-right:6px;
+  }
+  .areas-strip .place{
+    color:var(--ivory-50);font-size:0.92rem;opacity:0.88;
+    display:flex;align-items:center;gap:8px;
+  }
+  .areas-strip .place:not(:last-child)::after{
+    content:"";width:4px;height:4px;background:var(--gold-500);
+    display:inline-block;margin-left:26px;border-radius:50%;
+  }
+
+  /* Services */
+  .services{background:var(--ivory-100);}
+  .services-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .service-card{
+    background:#fff;
+    padding:34px 26px;
+    border:1px solid rgba(23,26,34,0.06);
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    position:relative;
+  }
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,24,48,0.1);border-color:var(--gold-300);}
+  .service-icon{
+    width:54px;height:54px;
+    border-radius:50%;
+    background:var(--navy-900);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;
+  }
+  .service-icon svg{width:24px;height:24px;color:var(--gold-300);}
+  .service-card h3{font-size:1.22rem;color:var(--navy-900);margin-bottom:10px;font-weight:700;}
+  .service-card p{font-size:0.88rem;color:var(--ink-600);line-height:1.6;}
+
+  .service-more{
+    margin-top:40px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:20px;
+    background:var(--navy-900);
+    padding:26px 32px;
+    border-left:4px solid var(--gold-500);
+  }
+  .service-more p{color:var(--ivory-50);font-size:0.95rem;max-width:52ch;}
+  .service-more p b{color:var(--gold-300);}
+  .service-more .tag{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-300);margin-bottom:6px;display:block;}
+
+  /* Why / signature split */
+  .why{
+    background:var(--navy-900);
+    position:relative;
+    overflow:hidden;
+  }
+  .why::before{
+    content:"";position:absolute;top:0;right:0;bottom:0;width:46%;
+    background:linear-gradient(160deg,var(--navy-800),transparent);
+    clip-path:polygon(30% 0,100% 0,100% 100%,0 100%);
+  }
+  .why .wrap{position:relative;z-index:2;}
+  .why-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:36px 30px;margin-top:10px;
+  }
+  .why-item{display:flex;gap:16px;}
+  .why-icon{
+    width:46px;height:46px;flex:none;
+    border:1px solid var(--gold-500);
+    display:flex;align-items:center;justify-content:center;
+    transform:rotate(45deg);
+  }
+  .why-icon svg{width:20px;height:20px;color:var(--gold-300);transform:rotate(-45deg);}
+  .why-item h3{font-family:'Work Sans',sans-serif;font-weight:700;color:var(--ivory-50);font-size:1.02rem;margin-bottom:6px;}
+  .why-item p{color:rgba(250,247,241,0.66);font-size:0.88rem;line-height:1.6;}
+
+  /* CTA / whatsapp band */
+  .cta-band{
+    background:linear-gradient(120deg,var(--gold-300),var(--gold-500) 55%,var(--gold-600));
+    padding:70px 0;
+  }
+  .cta-inner{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:26px;
+  }
+  .cta-inner h2{color:var(--navy-950);font-size:clamp(1.7rem,2.6vw,2.2rem);max-width:16ch;}
+  .cta-inner p{color:rgba(7,15,34,0.72);margin-top:10px;max-width:40ch;font-size:0.95rem;}
+  .cta-actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* Footer */
+  footer{background:var(--navy-950);color:rgba(250,247,241,0.7);padding:80px 0 0;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.3fr 0.9fr 0.9fr 1.1fr;gap:40px;
+    padding-bottom:56px;
+    border-bottom:1px solid rgba(198,164,85,0.14);
+  }
+  .footer-brand .brand{margin-bottom:16px;}
+  .footer-brand p{font-size:0.88rem;line-height:1.7;max-width:34ch;}
+  .footer-social{display:flex;gap:12px;margin-top:22px;}
+  .footer-social a{
+    width:34px;height:34px;border:1px solid rgba(198,164,85,0.3);
+    display:flex;align-items:center;justify-content:center;transition:.2s;
+  }
+  .footer-social a:hover{background:var(--gold-500);border-color:var(--gold-500);}
+  .footer-social svg{width:15px;height:15px;color:var(--gold-300);}
+  .footer-social a:hover svg{color:var(--navy-950);}
+  .fcol h4{
+    color:var(--ivory-50);font-family:'Cormorant Garamond',serif;font-size:1.05rem;
+    margin-bottom:20px;letter-spacing:0.02em;
+  }
+  .fcol li{margin-bottom:12px;font-size:0.88rem;}
+  .fcol a{opacity:0.82;transition:opacity .2s;}
+  .fcol a:hover{opacity:1;color:var(--gold-300);}
+  .fcol .contact-line{display:flex;gap:10px;align-items:flex-start;}
+  .fcol .contact-line svg{width:16px;height:16px;color:var(--gold-500);flex:none;margin-top:2px;}
+  .fcol .manager{color:var(--gold-300);font-weight:600;font-size:0.82rem;letter-spacing:0.04em;margin-bottom:10px;}
+  .foot-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    padding:24px 0;font-size:0.78rem;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .hero-grid{grid-template-columns:1fr;min-height:auto;}
+    .hero-visual{clip-path:none;height:320px;order:-1;}
+    .hero-copy{padding:56px 24px;}
+    .quote-form{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .about-panel{aspect-ratio:16/10;clip-path:none;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .why::before{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:600px){
+    .topbar-links{display:none;}
+    .quote-form{grid-template-columns:1fr;padding:26px 22px;}
+    .quote-phone{flex-basis:100%;padding:20px 22px;}
+    .services-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+    .cta-inner{flex-direction:column;align-items:flex-start;}
+    section{padding:72px 0;}
+  }
+</style>
+</head>
+<body>
+
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+        <path d="M6 26 L24 10 L42 26" stroke="url(#g1)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 22 V40 H37 V22" stroke="url(#g1)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M35 6 l1.8 3.7 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="url(#g1)"/>
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="48" y2="48">
+            <stop offset="0" stop-color="#e8d6a0"/>
+            <stop offset="1" stop-color="#a9843a"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="brand-text">
+        <span class="b1">BIG <span>STAR</span></span>
+        <span class="b2">Home Service</span>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="about.html">About Us</a>
+      <a href="service.html" class="active">Services</a>
+      <a href="contactus.html">Contact Us</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-gold" href="https://wa.me/17866591700?text=Hola%2C%20quisiera%20un%20estimado%20gratuito%20de%20limpieza" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.08L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2zm5.85 14.23c-.25.7-1.45 1.35-2 1.44-.53.09-1.15.13-1.86-.12-.43-.15-.98-.33-1.68-.65-2.96-1.28-4.9-4.24-5.04-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.31.31-.13.61.17.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.67-.15.28.1 1.76.83 2.06 .98.3.15.5.22.57.35.07.13.07.75-.18 1.44z"/></svg>
+        WhatsApp
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="padding:0;">
+  <div class="hero-grid wrap" style="max-width:none;padding:0;">
+    <div class="hero-copy wrap">
+      <span class="eyebrow on-dark">Limpieza residencial &amp; comercial · Miami</span>
+      <h1>Calidad que se ve, <em>servicio que se siente.</em></h1>
+      <p>En Big Star Home Service transformamos casas y oficinas con un servicio de limpieza premium, atención personalizada y productos de calidad — pensado para dejar cada espacio impecable, sin que usted tenga que preocuparse por nada.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#contacto">Solicitar estimado gratis</a>
+        <a class="btn btn-outline" href="tel:+17866591700">Llamar ahora →</a>
+      </div>
+      <ul class="hero-trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Atención personalizada</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Servicio garantizado</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Estimado 100% gratuito</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-visual-edge"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE STRIP ============ -->
+<div class="quote-strip">
+  <div class="wrap">
+    <form class="quote-card">
+      <div class="quote-form">
+        <div class="field">
+          <label for="q-name">Nombre</label>
+          <input id="q-name" type="text" placeholder="Su nombre">
+        </div>
+        <div class="field">
+          <label for="q-phone">Teléfono</label>
+          <input id="q-phone" type="tel" placeholder="(305) 000-0000">
+        </div>
+        <div class="field">
+          <label for="q-service">Servicio</label>
+          <select id="q-service">
+            <option>Limpieza Residencial</option>
+            <option>Limpieza de Oficinas</option>
+            <option>Limpieza Profunda</option>
+            <option>Organización de Espacios</option>
+            <option>Pintura</option>
+          </select>
+        </div>
+        <div class="field submit-cell">
+          <label>&nbsp;</label>
+          <button type="submit" class="btn btn-ink">Obtener estimado</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="nosotros">
+  <div class="wrap about-grid">
+    <div class="about-panel">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="86" stroke="#c6a455" stroke-opacity="0.3"/>
+        <path d="M60 130 c0-30 18-52 40-52 s40 22 40 52" stroke="#e8d6a0" stroke-width="2" fill="none"/>
+        <rect x="70" y="128" width="60" height="10" rx="3" fill="#e8d6a0" fill-opacity="0.9"/>
+        <path d="M40 60 l6 12 13 2-9.4 9 2.2 13-11.8-6.2L28.2 96l2.2-13L21 74l13-2z" fill="#c6a455"/>
+      </svg>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Sobre nosotros</span>
+      <h2>Un servicio de limpieza con estándar de hotel, para su hogar u oficina</h2>
+      <p>Big Star Home Service nace para ofrecer algo más que limpieza: un servicio confiable, detallado y con trato cercano, liderado por Sista Peñaranda. Cuidamos cada rincón como si fuera nuestra propia casa, con productos de calidad y protocolos de confianza y seguridad para su tranquilidad.</p>
+      <p>Atendemos Miami, Doral, Coral Gables, Brickell y Weston — con estimados gratuitos y comunicación directa por WhatsApp.</p>
+
+      <div class="about-badges">
+        <div class="about-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg>
+          <div><b>Confianza y seguridad</b><span>Personal de confianza y protocolos claros en cada visita.</span></div>
+        </div>
+        <div class="about-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.9 6.3L21 9.3l-4.5 4.4L17.6 20 12 16.8 6.4 20l1.1-6.3L3 9.3l6.1-1z"/></svg>
+          <div><b>Productos de calidad</b><span>Insumos seleccionados para un acabado impecable.</span></div>
+        </div>
+        <div class="about-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <div><b>Atención personalizada</b><span>Cada estimado y servicio se ajusta a su espacio.</span></div>
+        </div>
+        <div class="about-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 3 3 5-6"/></svg>
+          <div><b>Servicio garantizado</b><span>Trabajo revisado y garantizado en cada visita.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AREAS ============ -->
+<div class="areas-strip">
+  <div class="wrap">
+    <span class="lead">Áreas que atendemos</span>
+    <span class="place">Miami</span>
+    <span class="place">Doral</span>
+    <span class="place">Coral Gables</span>
+    <span class="place">Brickell</span>
+    <span class="place">Weston</span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Nuestros servicios</span>
+      <h2>Limpieza profesional a la medida de cada espacio</h2>
+      <p>Desde el cuidado diario del hogar hasta una limpieza profunda antes de una ocasión especial, cada servicio incluye atención personalizada y productos de calidad.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
+        <h3>Limpieza Residencial</h3>
+        <p>Mantenga su hogar impecable con un servicio confiable, adaptado a su rutina y necesidades.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1"/></svg></div>
+        <h3>Limpieza de Oficinas</h3>
+        <p>Un espacio de trabajo limpio y ordenado, con horarios flexibles pensados para su negocio.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <h3>Limpieza Profunda</h3>
+        <p>Atención al detalle en cada rincón: ideal para mudanzas, temporadas o eventos especiales.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h3>Organización de Espacios</h3>
+        <p>Orden funcional y estético para closets, cocinas y áreas comunes de su hogar u oficina.</p>
+      </div>
+    </div>
+
+    <div class="service-more">
+      <div>
+        <span class="tag">También ofrecemos</span>
+        <p>¿Necesita darle un nuevo color a su hogar u oficina? <b>Servicio de pintura</b> con el mismo cuidado y atención al detalle de Big Star Home Service.</p>
+      </div>
+      <a class="btn btn-gold" href="tel:+13057481078">Consultar pintura · (305) 748-1078</a>
+    </div>
+
+    <div style="text-align:center;margin-top:44px;">
+      <a class="btn btn-ink" href="services.html">Ver todos los servicios →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="why" id="porque">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow on-dark">Por qué elegirnos</span>
+      <h2 style="color:#faf7f1;">Cuidamos su espacio como si fuera el nuestro</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg></div>
+        <div><h3>Confianza y seguridad</h3><p>Personal confiable y comunicación clara antes, durante y después del servicio.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div><h3>Atención personalizada</h3><p>Escuchamos lo que su espacio necesita y ajustamos el servicio en consecuencia.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.9 6.3L21 9.3l-4.5 4.4L17.6 20 12 16.8 6.4 20l1.1-6.3L3 9.3l6.1-1z"/></svg></div>
+        <div><h3>Productos de calidad</h3><p>Insumos seleccionados para un acabado impecable y duradero.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 3 3 5-6"/></svg></div>
+        <div><h3>Servicio garantizado</h3><p>Estimado gratuito y trabajo respaldado en cada visita.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / WHATSAPP BAND ============ -->
+<section class="cta-band" id="contacto" style="padding:70px 0;">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Escríbame por WhatsApp y obtenga su estimado gratuito hoy</h2>
+      <p>Atención personalizada · Servicio garantizado · Respuesta rápida</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-ink" href="https://wa.me/17866591700?text=Hola%2C%20quisiera%20un%20estimado%20gratuito%20de%20limpieza" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.08L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2zm5.85 14.23c-.25.7-1.45 1.35-2 1.44-.53.09-1.15.13-1.86-.12-.43-.15-.98-.33-1.68-.65-2.96-1.28-4.9-4.24-5.04-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.31.31-.13.61.17.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.67-.15.28.1 1.76.83 2.06 .98.3.15.5.22.57.35.07.13.07.75-.18 1.44z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn btn-outline" style="border-color:rgba(7,15,34,0.35);color:var(--navy-950);" href="mailto:bigstarhomeservice@gmail.com">Enviar correo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+          <path d="M6 26 L24 10 L42 26" stroke="url(#g2)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 22 V40 H37 V22" stroke="url(#g2)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M35 6 l1.8 3.7 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="url(#g2)"/>
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="48" y2="48"><stop offset="0" stop-color="#e8d6a0"/><stop offset="1" stop-color="#a9843a"/></linearGradient></defs>
+        </svg>
+        <span class="brand-text">
+          <span class="b1">BIG <span>STAR</span></span>
+          <span class="b2">Home Service</span>
+        </span>
+      </a>
+      <p>Servicio de limpieza residencial y comercial en Miami y alrededores. Calidad que se ve, servicio que se siente.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h-2a5 5 0 0 0-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://wa.me/17866591700" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.08L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="fcol">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="fcol">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">Limpieza Residencial</a></li>
+        <li><a href="#servicios">Limpieza de Oficinas</a></li>
+        <li><a href="#servicios">Limpieza Profunda</a></li>
+        <li><a href="#servicios">Organización de Espacios</a></li>
+        <li><a href="#servicios">Pintura</a></li>
+      </ul>
+    </div>
+
+    <div class="fcol">
+      <h4>Contacto</h4>
+      <div class="manager">Sista Peñaranda · Manager</div>
+      <ul>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+17866591700">(786) 659-7100 · Limpieza</a></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13057481078">(305) 748-1078 · Pintura</a></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:bigstarhomeservice@gmail.com">bigstarhomeservice@gmail.com</a></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg><span>Miami · Doral · Coral Gables · Brickell · Weston</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap foot-bottom">
+    <span>© 2026 Big Star Home Service. Todos los derechos reservados.</span>
+    <span>Sitio diseñado con dedicación para un servicio de primera.</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function(){
+    var nav = document.querySelector('.nav-links');
+    var visible = nav.style.display === 'flex';
+    nav.style.display = visible ? 'none' : 'flex';
+    nav.style.cssText += visible ? '' : 'position:absolute;top:84px;left:0;right:0;background:#0a1830;flex-direction:column;padding:20px 24px;gap:18px;border-top:1px solid rgba(198,164,85,0.18);';
+  });
+
+  document.querySelector('.quote-card').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('q-name').value || 'Cliente';
+    var service = document.getElementById('q-service').value;
+    var msg = encodeURIComponent('Hola, soy ' + name + '. Quisiera un estimado gratuito para: ' + service);
+    window.open('https://wa.me/17866591700?text=' + msg, '_blank');
+  });
+</script>
+
+</body>
+</html>

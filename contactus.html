@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Big Star Home Service</title>
+<meta name="description" content="Contáctenos y reciba su estimado gratuito hoy mismo. Limpieza y pintura en Miami, Doral, Coral Gables, Brickell y Weston.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#070f22;
+    --navy-900:#0a1830;
+    --navy-800:#122a4d;
+    --navy-700:#1c3a67;
+    --gold-600:#a9843a;
+    --gold-500:#c6a455;
+    --gold-300:#e8d6a0;
+    --gold-100:#f6ecd2;
+    --ivory-50:#faf7f1;
+    --ivory-100:#f2ede1;
+    --ink-900:#171a22;
+    --ink-600:#4a4f5c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Work Sans',sans-serif;color:var(--ink-900);background:var(--ivory-50);-webkit-font-smoothing:antialiased;}
+  img,svg{display:block;max-width:100%;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  h1,h2,h3,.display{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.08;letter-spacing:0.005em;}
+  .eyebrow{font-family:'Work Sans',sans-serif;text-transform:uppercase;letter-spacing:0.22em;font-size:0.72rem;font-weight:600;color:var(--gold-600);}
+  .eyebrow.on-dark{color:var(--gold-300);}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:2px;font-weight:600;font-size:0.92rem;letter-spacing:0.02em;border:1px solid transparent;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;white-space:nowrap;}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-300),var(--gold-500) 60%,var(--gold-600));color:var(--navy-950);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(198,164,85,0.35);}
+  .btn-outline{background:transparent;border:1px solid rgba(250,247,241,0.4);color:var(--ivory-50);}
+  .btn-outline:hover{border-color:var(--gold-300);color:var(--gold-300);}
+  .btn-ink{background:var(--navy-900);color:var(--ivory-50);width:100%;justify-content:center;}
+  .btn-ink:hover{background:var(--navy-800);transform:translateY(-2px);}
+
+  /* ---------- Top bar ---------- */
+  .topbar{background:var(--navy-950);color:var(--gold-100);font-size:0.78rem;}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:20px;}
+  .topbar-links{display:flex;gap:26px;}
+  .topbar-links a{display:flex;align-items:center;gap:7px;opacity:0.88;transition:opacity .2s;}
+  .topbar-links a:hover{opacity:1;color:var(--gold-300);}
+  .topbar-tag{opacity:0.7;letter-spacing:0.04em;}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--navy-900);border-bottom:1px solid rgba(198,164,85,0.18);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:42px;height:42px;flex:none;}
+  .brand-text{color:var(--ivory-50);line-height:1.1;}
+  .brand-text .b1{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:700;letter-spacing:0.03em;}
+  .brand-text .b1 span{color:var(--gold-300);}
+  .brand-text .b2{font-size:0.6rem;letter-spacing:0.3em;color:var(--gold-500);text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;gap:40px;}
+  .nav-links a{color:var(--ivory-50);font-size:0.86rem;font-weight:500;opacity:0.82;position:relative;padding:6px 0;transition:opacity .2s;}
+  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold-300);}
+  .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold-500);}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:24px;height:2px;background:var(--gold-300);margin:5px 0;}
+
+  /* ---------- Page banner ---------- */
+  .page-banner{position:relative;background:var(--navy-900);overflow:hidden;}
+  .banner-grid{display:grid;grid-template-columns:1fr 0.92fr;align-items:stretch;min-height:440px;}
+  .banner-copy{display:flex;flex-direction:column;justify-content:center;padding:64px 0px 64px 56px;}
+  .banner-copy .eyebrow{margin-bottom:14px;}
+  .banner-copy h1{color:var(--ivory-50);font-size:clamp(2.4rem,4vw,3.4rem);margin-bottom:16px;}
+  .banner-copy p{color:rgba(250,247,241,0.72);font-size:1.05rem;max-width:42ch;line-height:1.6;}
+  .banner-visual{position:relative;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);background:linear-gradient(160deg,var(--navy-800),var(--navy-950) 75%);display:flex;align-items:center;justify-content:center;}
+  .banner-visual::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 25%, rgba(198,164,85,0.2), transparent 45%),radial-gradient(circle at 78% 78%, rgba(198,164,85,0.14), transparent 50%);}
+  .banner-visual-edge{position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold-300),var(--gold-600));transform:translateX(-1px) skewX(-9.2deg);transform-origin:top left;}
+  .banner-illustration{position:relative;z-index:2;width:60%;max-width:260px;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:100px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-top:14px;color:var(--navy-900);}
+  .section-head p{margin-top:16px;color:var(--ink-600);line-height:1.7;font-size:1rem;}
+
+  /* ---------- Contact main ---------- */
+  .contact-main{background:var(--ivory-50);}
+  .contact-grid{display:grid;grid-template-columns:0.86fr 1.14fr;gap:0;box-shadow:0 24px 60px rgba(10,24,48,0.14);}
+
+  .info-panel{
+    background:linear-gradient(165deg,var(--navy-900),var(--navy-950) 80%);
+    padding:52px 44px;position:relative;overflow:hidden;
+  }
+  .info-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 15%, rgb(198 164 85 / 34%), transparent 45%);}
+  .info-panel > *{position:relative;z-index:2;}
+  .info-panel .eyebrow{margin-bottom:10px;}
+  .info-panel h2{color:var(--ivory-50);font-size:1.9rem;margin-bottom:14px;}
+  .info-panel > p{color:rgba(250,247,241,0.68);font-size:0.92rem;line-height:1.65;margin-bottom:36px;}
+
+  .info-list{display:flex;flex-direction:column;gap:22px;margin-bottom:40px;}
+  .info-row{display:flex;gap:14px;align-items:flex-start;}
+  .info-icon{width:42px;height:42px;flex:none;border-radius:50%;background:rgba(198,164,85,0.14);border:1px solid rgba(198,164,85,0.35);display:flex;align-items:center;justify-content:center;}
+  .info-icon svg{width:18px;height:18px;color:var(--gold-300);}
+  .info-row .lbl{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-300);margin-bottom:4px;font-weight:600;}
+  .info-row .val{color:var(--ivory-50);font-size:0.96rem;font-weight:600;}
+  .info-row .val a{transition:color .2s;}
+  .info-row .val a:hover{color:var(--gold-300);}
+
+  .info-manager{
+    border-top:1px solid rgba(198,164,85,0.22);padding-top:26px;
+  }
+  .info-manager .name{font-family:'Cormorant Garamond',serif;color:var(--ivory-50);font-size:1.3rem;font-weight:700;}
+  .info-manager .role{color:var(--gold-300);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:2px;}
+
+  .form-panel{background:#fff;padding:52px 48px;}
+  .form-panel h2{color:var(--navy-900);font-size:1.7rem;margin-bottom:10px;}
+  .form-panel > p{color:var(--ink-600);font-size:0.92rem;margin-bottom:30px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .field{display:flex;flex-direction:column;gap:7px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-600);font-weight:700;}
+  .field input,.field select,.field textarea{
+    border:1px solid rgba(23,26,34,0.15);padding:13px 14px;font-family:inherit;font-size:0.92rem;
+    color:var(--ink-900);background:var(--ivory-100);border-radius:2px;resize:vertical;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold-500);}
+  .form-foot{display:flex;align-items:center;gap:18px;margin-top:8px;flex-wrap:wrap;}
+  .form-foot .btn-ink{flex:1 1 220px;}
+  .form-note{font-size:0.78rem;color:var(--ink-600);display:flex;align-items:center;gap:8px;}
+  .form-note svg{width:15px;height:15px;color:var(--gold-600);flex:none;}
+
+  /* ---------- Areas strip ---------- */
+  .areas-strip{background:var(--navy-900);padding:26px 0;}
+  .areas-strip .wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 34px;}
+  .areas-strip .lead{color:var(--gold-300);font-size:0.76rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;margin-right:6px;}
+  .areas-strip .place{color:var(--ivory-50);font-size:0.92rem;opacity:0.88;display:flex;align-items:center;gap:8px;}
+  .areas-strip .place:not(:last-child)::after{content:"";width:4px;height:4px;background:var(--gold-500);display:inline-block;margin-left:26px;border-radius:50%;}
+
+  /* ---------- Contact quick cards ---------- */
+  .quick{background:var(--ivory-100);}
+  .quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .quick-card{background:#fff;padding:32px 26px;text-align:center;border:1px solid rgba(23,26,34,0.06);transition:transform .3s ease, box-shadow .3s ease;}
+  .quick-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,24,48,0.1);}
+  .quick-icon{width:56px;height:56px;border-radius:50%;background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .quick-icon svg{width:24px;height:24px;color:var(--gold-300);}
+  .quick-card h3{font-size:1.05rem;color:var(--navy-900);margin-bottom:8px;font-weight:700;}
+  .quick-card p{font-size:0.86rem;color:var(--ink-600);margin-bottom:14px;}
+  .quick-card a.link{font-size:0.88rem;font-weight:700;color:var(--gold-600);}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{background:linear-gradient(120deg,var(--gold-300),var(--gold-500) 55%,var(--gold-600));padding:70px 0;}
+  .cta-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:26px;}
+  .cta-inner h2{color:var(--navy-950);font-size:clamp(1.7rem,2.6vw,2.2rem);max-width:16ch;}
+  .cta-inner p{color:rgba(7,15,34,0.72);margin-top:10px;max-width:40ch;font-size:0.95rem;}
+  .cta-actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-950);color:rgba(250,247,241,0.7);padding:80px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 0.9fr 0.9fr 1.1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(198,164,85,0.14);}
+  .footer-brand .brand{margin-bottom:16px;}
+  .footer-brand p{font-size:0.88rem;line-height:1.7;max-width:34ch;}
+  .footer-social{display:flex;gap:12px;margin-top:22px;}
+  .footer-social a{width:34px;height:34px;border:1px solid rgba(198,164,85,0.3);display:flex;align-items:center;justify-content:center;transition:.2s;}
+  .footer-social a:hover{background:var(--gold-500);border-color:var(--gold-500);}
+  .footer-social svg{width:15px;height:15px;color:var(--gold-300);}
+  .footer-social a:hover svg{color:var(--navy-950);}
+  .fcol h4{color:var(--ivory-50);font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:20px;letter-spacing:0.02em;}
+  .fcol li{margin-bottom:12px;font-size:0.88rem;}
+  .fcol a{opacity:0.82;transition:opacity .2s;}
+  .fcol a:hover{opacity:1;color:var(--gold-300);}
+  .fcol .contact-line{display:flex;gap:10px;align-items:flex-start;}
+  .fcol .contact-line svg{width:16px;height:16px;color:var(--gold-500);flex:none;margin-top:2px;}
+  .fcol .manager{color:var(--gold-300);font-weight:600;font-size:0.82rem;letter-spacing:0.04em;margin-bottom:10px;}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px 0;font-size:0.78rem;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .banner-grid{grid-template-columns:1fr;min-height:auto;}
+    .banner-visual{clip-path:none;height:220px;order:-1;}
+    .banner-copy{padding:52px 24px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .quick-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:600px){
+    .topbar-links{display:none;}
+    .form-panel,.info-panel{padding:36px 24px;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+    section{padding:64px 0;}
+    .cta-inner{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+        <path d="M6 26 L24 10 L42 26" stroke="url(#g1)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 22 V40 H37 V22" stroke="url(#g1)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M35 6 l1.8 3.7 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="url(#g1)"/>
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48"><stop offset="0" stop-color="#e8d6a0"/><stop offset="1" stop-color="#a9843a"/></linearGradient></defs>
+      </svg>
+      <span class="brand-text">
+        <span class="b1">BIG <span>STAR</span></span>
+        <span class="b2">Home Service</span>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="about.html">About Us</a>
+      <a href="service.html">Services</a>
+      <a href="contactus.html" class="active">Contact Us</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-gold" href="https://wa.me/17866591700?text=Hola%2C%20quisiera%20un%20estimado%20gratuito%20de%20limpieza" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.08L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2zm5.85 14.23c-.25.7-1.45 1.35-2 1.44-.53.09-1.15.13-1.86-.12-.43-.15-.98-.33-1.68-.65-2.96-1.28-4.9-4.24-5.04-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.31.31-.13.61.17.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.67-.15.28.1 1.76.83 2.06 .98.3.15.5.22.57.35.07.13.07.75-.18 1.44z"/></svg>
+        WhatsApp
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE BANNER ============ -->
+<section class="page-banner" style="padding:0;">
+  <div class="banner-grid wrap" style="max-width:none;padding:0;">
+    <div class="banner-copy wrap">
+      <span class="eyebrow on-dark">Contacto</span>
+      <h1>Escríbanos y reciba su estimado gratuito hoy</h1>
+      <p>Cuéntenos qué necesita y con gusto le preparamos un estimado a la medida — por WhatsApp, teléfono o correo.</p>
+    </div>
+    <div class="banner-visual">
+      <div class="banner-visual-edge"></div>
+      <svg class="banner-illustration" viewBox="0 0 240 240" fill="none">
+        <circle cx="120" cy="120" r="96" stroke="#c6a455" stroke-opacity="0.25" stroke-width="1"/>
+        <rect x="60" y="76" width="120" height="88" rx="6" stroke="#e8d6a0" stroke-width="2" fill="#0f2646" fill-opacity="0.6"/>
+        <path d="M64 82 120 122 176 82" stroke="#e8d6a0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="m120 34 3.6 7.4 8.1 1.2-5.9 5.7 1.4 8.1-7.2-3.8-7.2 3.8 1.4-8.1-5.9-5.7 8.1-1.2z" fill="#c6a455"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT MAIN ============ -->
+<section class="contact-main">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <div class="info-panel">
+        <span class="eyebrow on-dark">Información de contacto</span>
+        <h2>Hablemos de su proyecto</h2>
+        <p>Ya sea limpieza, pintura o ambas — nuestro equipo está listo para atenderle con un estimado 100% gratuito.</p>
+
+        <div class="info-list">
+          <div class="info-row">
+            <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <div class="lbl">Limpieza</div>
+              <div class="val"><a href="tel:+17866591700">(786) 659-7100</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <div class="lbl">Pintura</div>
+              <div class="val"><a href="tel:+13057481078">(305) 748-1078</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+            <div>
+              <div class="lbl">Correo</div>
+              <div class="val"><a href="mailto:bigstarhomeservice@gmail.com">bigstarhomeservice@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg></div>
+            <div>
+              <div class="lbl">Áreas de servicio</div>
+              <div class="val">Miami, Doral, Coral Gables, Brickell, Weston</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-manager">
+          <div class="name">Sista Peñaranda</div>
+          <div class="role">Manager</div>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2>Solicite su estimado gratuito</h2>
+        <p>Complete el formulario y le contactaremos por WhatsApp con su estimado personalizado.</p>
+
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="field">
+              <label for="c-name">Nombre completo</label>
+              <input id="c-name" type="text" placeholder="Su nombre" required>
+            </div>
+            <div class="field">
+              <label for="c-phone">Teléfono</label>
+              <input id="c-phone" type="tel" placeholder="(305) 000-0000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="c-email">Correo (opcional)</label>
+              <input id="c-email" type="email" placeholder="correo@ejemplo.com">
+            </div>
+            <div class="field">
+              <label for="c-service">Servicio de interés</label>
+              <select id="c-service">
+                <option>Limpieza Residencial</option>
+                <option>Limpieza de Oficinas</option>
+                <option>Pintura Interior y Exterior</option>
+                <option>Limpieza Profunda</option>
+                <option>Organización de Espacios</option>
+                <option>Servicios para el Hogar</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field full">
+              <label for="c-message">Mensaje</label>
+              <textarea id="c-message" rows="4" placeholder="Cuéntenos sobre su espacio y qué necesita..."></textarea>
+            </div>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btn btn-ink">Enviar por WhatsApp</button>
+            <span class="form-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg>Respuesta rápida y sin compromiso</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ AREAS ============ -->
+<div class="areas-strip">
+  <div class="wrap">
+    <span class="lead">Áreas que atendemos</span>
+    <span class="place">Miami</span>
+    <span class="place">Doral</span>
+    <span class="place">Coral Gables</span>
+    <span class="place">Brickell</span>
+    <span class="place">Weston</span>
+  </div>
+</div>
+
+<!-- ============ QUICK CONTACT CARDS ============ -->
+<section class="quick">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Más formas de contactarnos</span>
+      <h2>Elija la opción que más le convenga</h2>
+    </div>
+    <div class="quick-grid">
+      <div class="quick-card">
+        <div class="quick-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.08L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2zm5.85 14.23c-.25.7-1.45 1.35-2 1.44-.53.09-1.15.13-1.86-.12-.43-.15-.98-.33-1.68-.65-2.96-1.28-4.9-4.24-5.04-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.31.31-.13.61.17.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.67-.15.28.1 1.76.83 2.06 .98.3.15.5.22.57.35.07.13.07.75-.18 1.44z"/></svg></div>
+        <h3>WhatsApp</h3>
+        <p>La forma más rápida de recibir su estimado gratuito.</p>
+        <a class="link" href="https://wa.me/17866591700?text=Hola%2C%20quisiera%20un%20estimado%20gratuito%20de%20limpieza" target="_blank" rel="noopener">Escribir ahora →</a>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Llámenos</h3>
+        <p>(786) 659-7100 para limpieza · (305) 748-1078 para pintura.</p>
+        <a class="link" href="tel:+17866591700">Llamar ahora →</a>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+        <h3>Correo</h3>
+        <p>Escríbanos con el detalle de su proyecto y le responderemos pronto.</p>
+        <a class="link" href="mailto:bigstarhomeservice@gmail.com">Enviar correo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / WHATSAPP BAND ============ -->
+<section class="cta-band" style="padding:70px 0;">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Escríbame por WhatsApp y obtenga su estimado gratuito hoy</h2>
+      <p>Atención personalizada · Servicio garantizado · Respuesta rápida</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-ink" href="https://wa.me/17866591700?text=Hola%2C%20quisiera%20un%20estimado%20gratuito%20de%20limpieza" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.08L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2zm5.85 14.23c-.25.7-1.45 1.35-2 1.44-.53.09-1.15.13-1.86-.12-.43-.15-.98-.33-1.68-.65-2.96-1.28-4.9-4.24-5.04-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.31.31-.13.61.17.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.67-.15.28.1 1.76.83 2.06 .98.3.15.5.22.57.35.07.13.07.75-.18 1.44z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn btn-outline" style="border-color:rgba(7,15,34,0.35);color:var(--navy-950);" href="mailto:bigstarhomeservice@gmail.com">Enviar correo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+          <path d="M6 26 L24 10 L42 26" stroke="url(#g2)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 22 V40 H37 V22" stroke="url(#g2)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M35 6 l1.8 3.7 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="url(#g2)"/>
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="48" y2="48"><stop offset="0" stop-color="#e8d6a0"/><stop offset="1" stop-color="#a9843a"/></linearGradient></defs>
+        </svg>
+        <span class="brand-text">
+          <span class="b1">BIG <span>STAR</span></span>
+          <span class="b2">Home Service</span>
+        </span>
+      </a>
+      <p>Servicio de limpieza residencial y comercial en Miami y alrededores. Calidad que se ve, servicio que se siente.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h-2a5 5 0 0 0-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://wa.me/17866591700" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.08L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.5 22 22 17.52 22 12S17.5 2 12.02 2z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="fcol">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="fcol">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="services.html#servicios">Limpieza Residencial</a></li>
+        <li><a href="services.html#servicios">Limpieza de Oficinas</a></li>
+        <li><a href="services.html#servicios">Pintura Interior y Exterior</a></li>
+        <li><a href="services.html#servicios">Limpieza Profunda</a></li>
+        <li><a href="services.html#servicios">Organización de Espacios</a></li>
+        <li><a href="services.html#servicios">Servicios para el Hogar</a></li>
+      </ul>
+    </div>
+
+    <div class="fcol">
+      <h4>Contacto</h4>
+      <div class="manager">Sista Peñaranda · Manager</div>
+      <ul>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+17866591700">(786) 659-7100 · Limpieza</a></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13057481078">(305) 748-1078 · Pintura</a></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:bigstarhomeservice@gmail.com">bigstarhomeservice@gmail.com</a></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg><span>Miami · Doral · Coral Gables · Brickell · Weston</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap foot-bottom">
+    <span>© 2026 Big Star Home Service. Todos los derechos reservados.</span>
+    <span>Sitio diseñado con dedicación para un servicio de primera.</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function(){
+    var nav = document.querySelector('.nav-links');
+    var visible = nav.style.display === 'flex';
+    nav.style.display = visible ? 'none' : 'flex';
+    nav.style.cssText += visible ? '' : 'position:absolute;top:84px;left:0;right:0;background:#0a1830;flex-direction:column;padding:20px 24px;gap:18px;border-top:1px solid rgba(198,164,85,0.18);';
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('c-name').value || 'Cliente';
+    var phone = document.getElementById('c-phone').value || '';
+    var service = document.getElementById('c-service').value;
+    var message = document.getElementById('c-message').value;
+    var text = 'Hola, soy ' + name + ' (' + phone + '). Me interesa: ' + service + '.';
+    if(message){ text += ' Detalles: ' + message; }
+    window.open('https://wa.me/17866591700?text=' + encodeURIComponent(text), '_blank');
+  });
+</script>
+
+</body>
+</html>
